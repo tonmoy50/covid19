@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from . import userinfoform
 from . import ScoreCalculate
 from .models import UserData
 from datetime import date as dt
