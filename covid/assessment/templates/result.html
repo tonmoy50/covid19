@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+
+    <title>Result</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    {% include 'navbar.html' %}
+
+    <h1 style="color: rgb(2, 46, 104);border:1px solid rgb(2, 46, 104);padding:10px;margin:15px;" class="text-center">Your Score {{score}}</h1>
+
+    {% if score < 5 %}
+    <span>
+        <div class="card text-white bg-dark mb-3 mx-auto" style="width: 72rem;">
+            <div class="card-body">
+                <h5 class="card-title">COVID-19 Negative</h5>
+                <h3 class="text-center">Merely have chance to get affected by COVID-19</h3>
+                <h3 class="text-center">Advice: Isolation, Contact Doctor and Follow Their Advice </h3>
+                <h3 class="text-center"></h3>
+            </div>
+        </div>
+        
+    </span>
+
+    {% elif score == 5 or score == 6 %}
+    <span>
+                
+        <div class="card text-white bg-dark mb-3 mx-auto" style="width: 72rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">Counts as COVID-19 Positive</h5>
+              <h3 class="card-text">Highly chance of COVID-19 affected</p>
+              <h3 class="card-text">Advice: Isolation, Contact Doctor Immediately and Follow Their Advice</p>
+              <h3 class="card-text"></p>
+              
+            </div>
+        </div>
+
+
+    </span>
+    {% elif score == 7 %}
+    <span>
+        
+        <div class="card text-white bg-dark mb-3 mx-auto" style="width: 72rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">Counts as COVID-19 Positive</h5>
+              <h3 class="card-text">Possible suspected case for COVID-19 affected</p>
+              <h3 class="card-text">Advice: Isolation, Contact Doctor Immediately and Follow Their Advice</p>
+              <h3 class="card-text"></p>
+              
+            </div>
+        </div>
+    </span>
+
+    {% else %}
+    <span>
+
+        <div class="card text-white bg-dark mb-3 mx-auto" style="width: 72rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">Counts as COVID-19 Positive</h5>
+              <h3 class="card-text">Almost confirmed case of COVID-19 positive</p>
+              <h3 class="card-text">Advice: Isolation, Contact Doctor Immediately and Follow Their Advice</p>
+              <h3 class="card-text"></p>
+              
+            </div>
+        </div>
+    </span> 
+    {% endif %}
+
+    {% if score >= 5 %}
+    <div class="card text-white bg-dark mb-3 mx-auto" style="width: 18rem;">
+            
+        <div class="card-body">
+          <h5 class="card-title">Emergency Numbers</h5>
+          <p class="card-text">National Helpline - 999</p>
+          <p class="card-text">COVID-19 Helpline - 333</p>
+          <p class="card-text">IECDR Hotline - 10655</p>
+          
+        </div>
+      </div>
+      {% endif %}
+
+    <div class="text-white">
+        {% include 'footer.html' %}
+    </div>
+    
+</body>
+</html>

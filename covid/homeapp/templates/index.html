@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <style>
+        .center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body{
+        background-color : rgb(0, 7, 20)
+      }
+    </style>
+    
+    
+    
+
+    <title>Covid Self Assesment</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    {% include 'navbar.html' %}
+    <header>
+        <div class="text-center">
+            <h1 class="text-white">Covid-19 Self Assesment System</h1>
+        </div>    
+    </header>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="text-center">
+        <table class="center">
+            <tr>
+                <td>
+                    <a href="{% url 'assessment_page' %}" class="card-link">
+                      <div class="card-rounded" style="width: 18rem;">
+                        <img class="card-img-top" src="{% static 'self_assesment.png' %}" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Self Assesment</h5>
+                          <p class="card-text">A multiple choice questionnaire to identify the probability of Covid-19</p>
+                        </div>
+                                                                         
+                        </div>
+                      </div>
+                    </a>
+                    
+                </td>
+                
+                <td>
+                  <a href="{% url 'participants' %}">
+                    <div class="card-rounded" style="width: 18rem;">
+                      <img class="card-img-top" src="{% static 'list.png' %}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">List Of Participant</h5>
+                        <p class="card-text">Visualisation Data Table of The List of Participants</p>
+                      </div>
+                      
+                      </div>
+                    </div>
+                  </a>
+                    
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+    <div class="text-white">
+        {% include 'footer.html' %}
+    </div>
+    
+    
+
+
+
+
+
+</body>
+</html>
